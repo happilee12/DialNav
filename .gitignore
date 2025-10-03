@@ -19,3 +19,4 @@ dataset/RAIN/*
 dataset/checkpoints/*
 captions/*
 llama_evaluation
+output/*

@@ -18,6 +18,4 @@ dataset/modules/*
 dataset/RAIN/*
 dataset/checkpoints/*
 captions/*
-readme.md
-local_readme.md
 llama_evaluation

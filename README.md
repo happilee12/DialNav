@@ -14,7 +14,6 @@
 This repository provides the codebase and resources for DialNav.  
 Follow the steps below to prepare datasets, checkpoints, and dependencies.
 
----
 
 ## 📊 Dataset Version Management
 
@@ -24,7 +23,6 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
   * Supplementary features (connectivity, features, modules)
   * Pre-trained model checkpoints
 
----
 
 ## 1. Dataset Preparation
 
@@ -45,7 +43,6 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
        └── modules/
    ```
 
----
 
 ### (b) RAIN Dataset
 1. Download the RAIN dataset from the official link (to be provided).  
@@ -58,7 +55,6 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
    <project_base>/dataset/RAIN/holistic/
    ```
 
----
 
 ### (c) Checkpoints
 1. Download model checkpoints from the provided link.  
@@ -67,7 +63,6 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
    <project_base>/dataset/checkpoints/
    ```
 
----
 
 ## 2. Running Holistic Inference
 
@@ -81,7 +76,6 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
    bash script/run.sh
    ```
 
----
 
 ## 3. Dependencies & Acknowledgements
 
@@ -97,8 +91,6 @@ We sincerely thank the authors of these repositories for making their code publi
 
 
 
-
----
 
 
 ## Simulator

@@ -34,7 +34,7 @@ Each episode is represented as a JSON object with the following fields:
 - **`end_panos`** *(list of strings)*: Goal location panoramas (may include multiple viewpoints).  
 - **`scan`** *(string)*: Matterport3D scene ID.  
 - **`target`** *(string)*: Object in the goal room for initial instruction  
-- **`nav_steps`** *(list of strings)*: Ground-truth navigation trajectory (sequence of pano IDs).  
+- **`nav_steps`** *(list of strings)*: human navigation trajectory (sequence of pano IDs).  
 - **`nav_idx`** *(int)*: 0.  
 
 ---
@@ -79,10 +79,10 @@ Each entry represents a single dialog turn within a navigation episode.
 - **`nav_idx`** *(int)*: Navigation step index of this segment.  
 - **`q`** *(string)*: Navigator’s question at this step.  
 - **`a`** *(string)*: Guide’s answer at this step.  
-- **`nav_history`** *(list of strings)*: History of panoramas visited so far.  
-- **`gt_path`** *(list of strings)*: Ground-truth reference path from current position to goal.  
+- **`nav_history`** *(list of strings)*: History of panoramas visited so far (human navigation trajectory).  
+- **`gt_path`** *(list of strings)*: The shortest path from current position to goal.  
 - **`_start_pano_episode`** *(string)*: Panorama ID of the entire episode’s start location.  
-- **`_full_trajectory`** *(list of strings)*: Complete trajectory of the entire episode.  
+- **`_full_trajectory`** *(list of strings)*: Complete human navigation trajectory of the entire episode.  
 - **`_full_dialog`** *(list of QA pairs)*: Full dialog history for the entire episode.  
 - **`_chat_idx`** *(int)*: Index of current dialog turn.  
 - **`_chat_len`** *(int)*: Total number of dialog turns in the episode.  
@@ -98,7 +98,6 @@ Each entry is a complete navigation-dialog episode.
 ```json
 {
     "meta": {
-        "source": "...",
         "scan": "2n8kARJN3HM",
         "target": "plant",
         "start_pano": "...",
@@ -126,7 +125,6 @@ Each entry is a complete navigation-dialog episode.
 
 #### Field Specifications
 - **`meta`** *(dict)*: Metadata for the episode.  
-  - `source`: Original file path.  
   - `scan`: Matterport3D scene ID.  
   - `target`: Goal label.  
   - `start_pano`: Starting panorama.  
@@ -142,7 +140,7 @@ Each entry is a complete navigation-dialog episode.
   - `path_idx`, `game_idx`: Additional indexing for multiple paths/games.  
 
 - **`gt_trajectory`** *(list of strings)*: Ground-truth navigation trajectory.  
-- **`nav_trajectory`** *(list of strings)*: Navigator’s executed trajectory.  
+- **`nav_trajectory`** *(list of strings)*: Navigator’s executed trajectory (human navigation trajectory).  
 - **`stop_history`** *(list of ints)*: Indices where the agent stopped.  
 - **`gui_actions`** *(list of dicts)*: GUI actions logged during data collection (navigation, room selection, trajectory exploration).  
 - **`dialog`** *(list of QA pairs)*: Dialog turns (navigator question, guide answer).  

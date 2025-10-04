@@ -1,19 +1,25 @@
-## TODO
-- [x] Holistic inference  and checkpoints  
-- [ ] Training each modules  
-- [ ] Dataset  
-- [ ] Dataset collection tool  
-
-
 
 # DialNav: Holistic Inference Setup
-👉 [DialNav Project Page](https://happilee12.github.io/DialNav/)
-
-**📋 All dataset can be found in here** - All required datasets and checkpoints are available in [this Google Drive folder](https://drive.google.com/drive/folders/1MMYPP8_BiyFrxBn1kCoaLu94PErY9p6y).
-
 This repository provides the codebase and resources for DialNav.  
 Follow the steps below to prepare datasets, checkpoints, and dependencies.
 
+<br>
+
+## 🔗 Quick Links
+- [DialNav Project Page](https://happilee12.github.io/DialNav/) - Main project website
+- [Download RAIN Dataset](https://drive.google.com/drive/folders/1Pp_HOUDIo-uKQph18w-zqUMHcDJ6Gmg0) - Get the RAIN dataset
+- [RAIN Dataset Documentation](https://github.com/happilee12/DialNav/blob/main/rain_dataset.md) - Detailed dataset explanation
+- [Data Collection Tool](https://github.com/happilee12/DialNavDataCollectionTool) 
+
+<br>
+
+## TODO
+- [x] Holistic inference  and checkpoints  
+- [x] Dataset  
+- [x] Dataset collection tool  
+- [ ] Training each modules  
+
+<br>
 
 ## 📊 Dataset Version Management
 
@@ -23,6 +29,7 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
   * Supplementary features (connectivity, features, modules)
   * Pre-trained model checkpoints
 
+<br>
 
 ## 1. Dataset Preparation
 
@@ -43,9 +50,12 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
        └── modules/
    ```
 
+<br>
 
 ### (b) RAIN Dataset
-1. Download the RAIN dataset from the official link (to be provided).  
+1. Download the RAIN dataset:
+   [RAIN (Google Drive Link)](https://drive.google.com/drive/folders/1Pp_HOUDIo-uKQph18w-zqUMHcDJ6Gmg0 )
+
 2. Place it under:
    ```
    <project_base>/dataset/RAIN/
@@ -55,14 +65,18 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
    <project_base>/dataset/RAIN/holistic/
    ```
 
+<br>
 
 ### (c) Checkpoints
 1. Download model checkpoints from the provided link.  
+   [checkpoints.zip (Google Drive Link)](https://drive.google.com/drive/folders/1MMYPP8_BiyFrxBn1kCoaLu94PErY9p6y)
+
 2. Place them under:
    ```
    <project_base>/dataset/checkpoints/
    ```
 
+<br>
 
 ## 2. Running Holistic Inference
 
@@ -76,6 +90,7 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
    bash script/run.sh
    ```
 
+<br>
 
 ## 3. Dependencies & Acknowledgements
 
@@ -89,9 +104,7 @@ This project builds upon the following open-source implementations:
 
 We sincerely thank the authors of these repositories for making their code publicly available. Their contributions have been invaluable to this work.
 
-
-
-
+<br>
 
 ## Simulator
 We use the **Matterport3D Simulator (latest version)**.  

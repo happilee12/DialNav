@@ -1,12 +1,12 @@
 
 # DialNav: Holistic Inference Setup
+This is the official repository for DialNav (ICCV '2025) [DialNav Project Page](https://happilee12.github.io/DialNav/)
 This repository provides the codebase and resources for DialNav.  
 Follow the steps below to prepare datasets, checkpoints, and dependencies.
 
 <br>
 
 ## 🔗 Quick Links
-- [DialNav Project Page](https://happilee12.github.io/DialNav/) - Main project website
 - [Download RAIN Dataset](https://drive.google.com/drive/folders/1Pp_HOUDIo-uKQph18w-zqUMHcDJ6Gmg0) - Get the RAIN dataset
 - [RAIN Dataset Documentation](https://github.com/happilee12/DialNav/blob/main/rain_dataset.md) - Detailed dataset explanation
 - [Data Collection Tool](https://github.com/happilee12/DialNavDataCollectionTool) 

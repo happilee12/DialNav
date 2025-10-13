@@ -70,7 +70,7 @@ Follow the steps below to prepare datasets, checkpoints, and dependencies.
 
 ### (c) Checkpoints
 1. Download model checkpoints from the provided link.  
-   [checkpoints.zip (Google Drive Link)](https://drive.google.com/drive/folders/1MMYPP8_BiyFrxBn1kCoaLu94PErY9p6y)
+   [checkpoints (Google Drive Link)](https://drive.google.com/drive/folders/1MMYPP8_BiyFrxBn1kCoaLu94PErY9p6y)
 
 2. Place them under:
    ```

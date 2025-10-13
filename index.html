@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="description"
+        content="We propose random conditioning to overcome student models failing to generate images for conditions not covered by the paired dataset during diffusion model distillation, enabling compact compression with minimal performance loss."> -->
+  <!-- <meta name="keywords" content="Diffusion models, Knowledge distillation, Model compression, Generative modeling, Resource efficiency"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DialNav: Embodied Dialog for Navigation with a Remote Guide</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png"> 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <!-- KaTex -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+  </script>
+  <!-- KaTex -->
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DialNav: Embodied Dialog for Navigation with a Remote Guide</h1>
+          <div class="is-size-3 publication-authors">
+            <img src="./static/images/iccv-2025.svg" alt="ICCV Logo" style="height: 62px; vertical-align: middle; margin-right: 10px;">
+            <b>ICCV 2025</b>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Leekyeung Han</a><sup>1</sup></span>
+            <span class="author-block">Hyunji Min<sup>1</sup></span>
+            <span class="author-block">Gyeom Hwangbo<sup>2</sup></span>
+            <span class="author-block">Jonghyun Choi<sup>3</sup></span>
+            <span class="author-block">
+              <a href="https://phseo.github.io/">Paul Hongsuck Seo</a><sup>1</sup>;</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Korea University,</span>
+            <span class="author-block"><sup>2</sup>University of Seoul,</span>
+            <span class="author-block"><sup>3</sup>Seoul National University</span>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <a href="https://www.korea.edu/sites/en/index.do" target="_blank">
+              <img src="./static/images/ku-logo.png" alt="korea" style="height: 50px; margin-right: 60px;">
+            </a>
+            <a href="https://miil.korea.ac.kr/" target="_blank">
+              <img src="./static/images/miil.png" alt="miil" style="height: 54px; margin-right: 50px;">
+            </a>
+            <img src="./static/images/UOS.png" alt="UOS" style="height:61px;">
+            <img src="./static/images/SNU.png" alt="SNU" style="height:80px;">
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.12894"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2502.06139"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/happilee12/DialNav.git"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+                         alt="Hugging Face" style="width: 20px; height: 20px;">
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce DialNav, a novel dialog-based collaborative navigation task, where an embodied agent (Navigator) and a remote guide (Guide) engage in multi-turn dialog to reach a goal location.
+            Unlike prior works, DialNav aims for holistic evaluation and requires the Guide to infer the Navigator's location, making communication essential for task success.
+To support this task, we collect and release Remote Assistance in Navigation (RAIN) dataset, human-human dialog paired with navigation trajectories in photorealistic environments. 
+We design a comprehensive benchmark, evaluating navigation and dialog, and conduct extensive experiments analyzing  the impact of different Navigator and Guide models. 
+We highlight key challenges and publicly release the dataset, code, and evaluation framework to foster advancements in dialog-based embodied AI.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <!-- <img src="./static/images/randcond.png" class="center" width="600"/> -->
+        <img src="./static/images/figure1.png" style="display: block; margin: 0 auto;" width="800"/>
+        <div class="content has-text-justified">
+          <p>
+            Navigator is tasked with reaching the goal region R (yellow circle in the map) from the initial node b based on an ambiguous initial instruction I, which provides only a hint about R (e.g., "The goal room contains a carpet").
+During navigation, Navigator can ask questions to obtain additional guidance (orange text boxes). 
+Guide has knowledge of the environment but lacks information of Navigator's location.
+For successful navigation, Guide must estimate Navigator's location through dialog D and provide directions from the estimated position to the goal region (blue text boxes).
+Note that each QA pair in D is mapped to a node (red and purple nodes mapped to dialog turns by dotted arrows) in the navigation trajectory T.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">DialNav Task</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/h-9eUxVTqqk?si=hbyjrVlrcDmGzG4z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="content has-text-justified">
+          <p>
+            <b>DialNav Task Description.</b>
+            In DialNav, Navigator starts with an ambiguous instruction and gathers additional information through natural language dialog with Guide.
+            Navigator must determine when to seek assistance and generate relevant questions.
+            Guide, upon receiving a query, infers Navigator's location before providing a response, incentivizing Navigator to ask informative questions.
+            Dialog is initiated by Navigator and follows an alternating turn-taking format, with no limit on QA turns.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">RAIN Dataset</h2>
+        <img src="./static/images/dataset_characteristics.png" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Dialog characteristics in RAIN dataset.</b>
+            We manually analyzed 100 randomly sampled episodes from RAIN and present various dialog characteristics in RAIN, along with an example. The Init. and Subs. columns indicate the frequencies of these characteristics in the first and subsequent dialog turns, respectively.
+          </p>
+        </div>
+        <!-- <img src="./static/images/quantitative_results.png" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Impact of random conditioning.</b>
+            “Rand Cond” indicates whether random conditioning is applied, and “Real image” shows whether real images were used during training.
+            The gray row shows teacher performance. Random conditioning leads to better performance of the student model.
+          </p>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
+        <img src="./static/images/qualitative.png" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>A qualitative DialNav episode with the initial instruction: 'The goal room contains a bookcase'</b>
+            The 3D reconstructed map at the top of each turn shows the same Matterport 3D environment from different angles, with ellipses representing nodes in Navigator's full path. 
+            A red node indicates where Navigator posed a question at the current turn, yellow nodes mark the goal region, and gray and white nodes represent unvisited and visited nodes, respectively, up to the current turn.
+            Navigator formulates questions (orange boxes) with detailed descriptions of surrounding objects (highlighted with green circles in the 3D maps and corresponding images on the side), such as '<i>white bathtub</i>' in the first turn, or <i>long glass table}' in the second turn.
+            Guide provides visual hints (blue circles), like '<i>white sofa</i>'' in the second turn, along with path guidance (blue boxes) and instructions on where to stop (\eg, '<i>that's our goal room</åi>''), which are crucial for achieving high SR.
+            Through this dialog, Navigator successfully reaches the goal region.
+          </p>
+        </div>
+        <!-- <img src="./static/images/qualitative_results.jpg" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            <b>Qualitative comparison with baseline models.</b>
+            Images generated by our model and baseline models, using captions from DiffusionDB as prompts.
+          </p>
+        </div> -->
+      </div>
+    </div>
+ 
+    
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <!-- <pre><code>@InProceedings{Kim_2025_CVPR,
+    author    = {Kim, Dohyun and Park, Sehwan and Han, Geonhee and Kim, Seung Wook and Seo, Paul Hongsuck},
+    title     = {Random Conditioning for Diffusion Model Compression with Distillation},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {18607-18618} -->
+  }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

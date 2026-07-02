@@ -24,7 +24,6 @@ resources that used to live here are now consolidated in the new **RAINbow**
 repository:
 
 - 📦 Code, datasets, and holistic evaluation → https://github.com/happilee12/RAINbow
-- 🌐 Project page → https://happilee12.github.io/RAINbow/
 
 <br>
 
